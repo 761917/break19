@@ -14,10 +14,14 @@ class Ball{
     yPos+=ySpeed;
     fill(100,50,150);
     ellipse(xPos,yPos,50,50);
-    if(xPos+25>width || xPos-25<0)
-      xSpeed*=-1;
-    if(yPos+25>height||yPos-25<0)
-      ySpeed*=-1;
+    if(xPos+25>width)
+      xSpeed=-Math.abs(xSpeed);
+    if(xPos-25<0)
+      xSpeed=Math.abs(xSpeed);
+    if(yPos+25>height)
+      ySpeed=-Math.abs(ySpeed);
+    if(yPos-25<0)
+      ySpeed=Math.abs(ySpeed);
   }
   int getX()
   {
